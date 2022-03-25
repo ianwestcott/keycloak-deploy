@@ -24,8 +24,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.inputs.tag }}
-      # TODO replace idw-ecr-tags branch with v1
-      - uses: mbta/actions/build-push-ecr@idw-ecr-tags
+      - uses: mbta/actions/build-push-ecr@v1
         id: build-push
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
