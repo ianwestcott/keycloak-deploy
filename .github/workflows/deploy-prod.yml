@@ -1,4 +1,4 @@
-name: Deploy Keycloak Prod
+name: Deploy Keycloak Dev Testing
 
 on:
   workflow_dispatch:
@@ -12,12 +12,12 @@ jobs:
     name: Deploy
     runs-on: ubuntu-latest
     environment:
-      name: Keycloak Prod
-      url: https://login.mbta.com/
-    concurrency: prod
+      name: Keycloak Dev
+      url: https://login-dev.mbta.com/
+    concurrency: dev
     env:
       ECS_CLUSTER: keycloak
-      ECS_SERVICE: keycloak-prod
+      ECS_SERVICE: keycloak-dev
 
     steps:
       - uses: mbta/actions/deploy-ecs@v1
